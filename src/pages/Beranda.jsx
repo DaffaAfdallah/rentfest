@@ -53,7 +53,7 @@ const Beranda = () => {
           </button>
         </div>
         <div className="w-auto animate-fadeInUp">
-          <img src={img1} alt="Ilustrasi" className="w-auto h-auto" />
+          <img src={img1} alt="Ilustrasi" className="w-screen" />
         </div>
       </header>
 
