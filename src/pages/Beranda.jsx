@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Slider from "react-slick";
 import img1 from '../assets/images/img1.webp';
 import kamera from '../assets/images/kamera.png';
@@ -17,7 +19,15 @@ import brand3 from '../assets/images/brand3.svg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const Beranda = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+      once: true,
+    });
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -49,9 +59,9 @@ const Beranda = () => {
 
       <section className="bg-cover bg-center mt-48" style={{ backgroundImage: `url(${rentfestBackground})` }}>
         <div className="container mx-auto text-center py-16">
-          <h3 className="text-5xl font-bold mb-8 text-[#f5f5f5]">Apa Itu RentFest?</h3>
+          <h3 className="text-5xl font-bold mb-8 text-[#f5f5f5]" data-aos="fade-up">Apa Itu RentFest?</h3>
           <div className="px-0 mx-auto">
-            <p className="text-lg px-24 text-[#f5f5f5]">
+            <p className="text-lg px-24 text-[#f5f5f5]" data-aos="fade-up">
               <strong>RentFest</strong> adalah website pelayanan service yang menghubungkan antara pelanggan dengan penyedia jasa rental peralatan untuk keperluan acara kampus dan lainnya, dengan fokus pada memberikan akses mudah dan informasi yang akurat. Platform ini akan menyediakan data lengkap tentang lokasi penyewaan alat, deskripsi peralatan yang tersedia, serta harga sewa yang transparan. Selain itu, informasi platform akan terhubung secara langsung dengan penyedia jasa rental alat untuk memastikan ketersediaan informasi yang akurat dan real-time bagi pengguna.
             </p>
           </div>
@@ -59,8 +69,8 @@ const Beranda = () => {
       </section>
 
       <section className="container mx-auto px-8 mt-40">
-        <h3 className="text-5xl text-center font-bold mb-8">Kenapa RentFest?</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-justify">
+        <h3 className="text-5xl text-center font-bold mb-8" data-aos="fade-up">Kenapa RentFest?</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-justify" data-aos="fade-up">
           <div className="card p-6 rounded-2xl">
             <h4 className="text-xl font-semibold">Pencarian Alat Yang Cepat</h4>
             <p className="text-base mt-2">Pencarian yang canggih, pengguna dapat dengan mudah menemukan alat yang mereka butuhkan dengan cepat dan efisien.</p>
@@ -85,8 +95,8 @@ const Beranda = () => {
       </section>
 
       <section className="container mx-auto mt-40 px-8">
-        <h3 className="text-5xl text-center font-bold mb-8">Cari Alat Yang Kamu Butuhkan</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <h3 className="text-5xl text-center font-bold mb-8" data-aos="fade-up">Cari Alat Yang Kamu Butuhkan</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up">
           <div className="relative group shadow-2xl">
             <img src={kamera} alt="Kamera" className="object-cover w-full h-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
@@ -204,8 +214,8 @@ const Beranda = () => {
 
       <section className="bg-cover bg-center mt-48" style={{ backgroundImage: `url(${rentfestBackground})` }}>
         <div className="container mx-auto text-center py-16">
-          <h3 className="text-5xl font-bold mb-8 text-[#f5f5f5]">Toko Yang Bekerjasama<br />Dengan Kami</h3>
-          <div className="flex justify-center gap-8 items-center flex-wrap">
+          <h3 className="text-5xl font-bold mb-8 text-[#f5f5f5]" data-aos="fade-up">Mitra Kami</h3>
+          <div className="flex justify-center gap-8 items-center flex-wrap" data-aos="fade-up">
             <div className="m-2">
               <img src={brand1} alt="Toko 1" className="w-24" />
             </div>
