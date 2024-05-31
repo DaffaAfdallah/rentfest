@@ -94,53 +94,53 @@ const Beranda = () => {
         </div>
       </section>
 
-      <section className="container mx-auto mt-40 px-8">
+      <section className="container mx-auto mt-40 px-48">
         <h3 className="text-5xl text-center font-bold mb-8" data-aos="fade-up">Cari Alat Yang Kamu Butuhkan</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up">
           <div className="relative group shadow-2xl">
-            <img src={kamera} alt="Kamera" className="object-cover w-full h-full rounded-2xl" />
+            <img src={kamera} alt="Kamera" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Kamera</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={sistemsuara} alt="Sistem Suara" className="object-cover w-full h-full rounded-2xl" />
+            <img src={sistemsuara} alt="Sistem Suara" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Sistem<br />Suara</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={layar} alt="Layar & Proyektor" className="object-cover w-full h-full rounded-2xl" />
+            <img src={layar} alt="Layar & Proyektor" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Layar &<br />Proyektor</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={lampu} alt="Lampu" className="object-cover w-full h-full rounded-2xl" />
+            <img src={lampu} alt="Lampu" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Lampu</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={meja} alt="Meja & Kursi" className="object-cover w-full h-full rounded-2xl" />
+            <img src={meja} alt="Meja & Kursi" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Meja &<br />Kursi</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={panggung} alt="Panggung" className="object-cover w-full h-full rounded-2xl" />
+            <img src={panggung} alt="Panggung" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Panggung</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-          <img src={listrik} alt="Listrik Generator" className="object-cover w-full h-full rounded-2xl" />
+          <img src={listrik} alt="Listrik Generator" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Listrik<br />Generator</span>
             </div>
           </div>
           <div className="relative group shadow-2xl">
-            <img src={akom} alt="Alat Komunikasi" className="object-cover w-full h-full rounded-2xl" />
+            <img src={akom} alt="Alat Komunikasi" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Alat<br />Komunikasi</span>
             </div>
@@ -170,13 +170,13 @@ const Beranda = () => {
       </section>
 
       <section className="container mx-auto px-8 my-40">
-        <h3 className="text-5xl text-center font-bold mb-8">Testimoni</h3>
+        <h3 className="text-5xl text-center font-bold mb-8">Ulasan Pengguna</h3>
         <div className="flex justify-center">
           <div className="testimoni w-full md:w-2/3 rounded-2xl">
             <Slider {...settings}>
               <div className="p-6">
-                <h4 className="text-2xl font-semibold mb-4">Pelayanan Luar Biasa</h4>
-                <p className="text-base mb-4">Saya sangat terkesan dengan pelayanan dari website ini. Saya bisa dengan mudah menemukan alat yang saya butuhkan untuk acara kampus kami.</p>
+                <h4 className="text-2xl font-semibold mb-4">Cepat & Mudah</h4>
+                <p className="text-base mb-4">Layanan yang sangat membantu! Saya bisa menemukan semua alat yang saya butuhkan dengan cepat dan mudah.</p>
                 <div className="flex">
                   <img src={user} alt="Rini" className="w-12 h-12 rounded-full mr-4" />
                   <div>
@@ -186,8 +186,8 @@ const Beranda = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h4 className="text-2xl font-semibold mb-4">Rekomendasi Alat yang Tepat</h4>
-                <p className="text-base mb-4">Fitur rekomendasi alat dari website ini benar-benar membantu kami dalam mendapatkan saran tentang alat-alat yang sesuai dengan tema dan kebutuhan acara kami, terima kasih rentfest :D</p>
+                <h4 className="text-2xl font-semibold mb-4">Rekomendasi</h4>
+                <p className="text-base mb-4">RentFest sangat memudahkan dalam mencari peralatan untuk acara kampus kami. Sangat direkomendasikan! :D</p>
                 <div className="flex">
                   <img src={user} alt="Muhammad Iqbal" className="w-12 h-12 rounded-full mr-4" />
                   <div>
@@ -198,7 +198,7 @@ const Beranda = () => {
               </div>
               <div className="p-6">
                 <h4 className="text-2xl font-semibold mb-4">Alatnya Lengkap</h4>
-                <p className="text-base mb-4">Kami sangat senang dengan paket acara yang disediakan oleh website ini. Semua alat yang kami butuhkan tersedia, ini benar-benar menghemat waktu dan tenaga kami dalam menyelenggarakan acara.</p>
+                <p className="text-base mb-4">Platform yang luar biasa! Saya bisa menemukan alat yang saya butuhkan dan melihat ulasan dari pengguna lain.</p>
                 <div className="flex">
                   <img src={user} alt="Ahmad" className="w-12 h-12 rounded-full mr-4" />
                   <div>
