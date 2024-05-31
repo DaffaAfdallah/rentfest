@@ -61,8 +61,8 @@ const Beranda = () => {
         <div className="container mx-auto text-center py-16">
           <h3 className="text-5xl font-bold mb-8 text-[#f5f5f5]" data-aos="fade-up">Apa Itu RentFest?</h3>
           <div className="px-0 mx-auto">
-            <p className="text-lg px-24 text-[#f5f5f5]" data-aos="fade-up">
-              <strong>RentFest</strong> adalah website pelayanan service yang menghubungkan antara pelanggan dengan penyedia jasa rental peralatan untuk keperluan acara kampus dan lainnya, dengan fokus pada memberikan akses mudah dan informasi yang akurat. Platform ini akan menyediakan data lengkap tentang lokasi penyewaan alat, deskripsi peralatan yang tersedia, serta harga sewa yang transparan. Selain itu, informasi platform akan terhubung secara langsung dengan penyedia jasa rental alat untuk memastikan ketersediaan informasi yang akurat dan real-time bagi pengguna.
+            <p className="text-lg px-24 text-[#f5f5f5] font-light" data-aos="fade-up">
+              <strong className="font-bold">RentFest</strong> adalah website pelayanan service yang menghubungkan antara pelanggan dengan penyedia jasa rental peralatan untuk keperluan acara kampus dan lainnya, dengan fokus pada memberikan akses mudah dan informasi yang akurat. Platform ini akan menyediakan data lengkap tentang lokasi penyewaan alat, deskripsi peralatan yang tersedia, serta harga sewa yang transparan. Selain itu, informasi platform akan terhubung secara langsung dengan penyedia jasa rental alat untuk memastikan ketersediaan informasi yang akurat dan real-time bagi pengguna.
             </p>
           </div>
         </div>
@@ -97,49 +97,49 @@ const Beranda = () => {
       <section className="container mx-auto mt-40 px-48">
         <h3 className="text-5xl text-center font-bold mb-8" data-aos="fade-up">Cari Alat Yang Kamu Butuhkan</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up">
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={kamera} alt="Kamera" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Kamera</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={sistemsuara} alt="Sistem Suara" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Sistem<br />Suara</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={layar} alt="Layar & Proyektor" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Layar &<br />Proyektor</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={lampu} alt="Lampu" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Lampu</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={meja} alt="Meja & Kursi" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Meja &<br />Kursi</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={panggung} alt="Panggung" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Panggung</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
           <img src={listrik} alt="Listrik Generator" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Listrik<br />Generator</span>
             </div>
           </div>
-          <div className="relative group shadow-2xl">
+          <div className="relative group shadow-2xl cursor-default">
             <img src={akom} alt="Alat Komunikasi" className="object-cover w-full rounded-2xl" />
             <div className="absolute inset-0 bg-[#1b1a55] bg-opacity-60 flex items-center justify-center rounded-2xl group-hover:bg-opacity-0 transition duration-300">
               <span className="text-white text-3xl font-semibold group-hover:opacity-0 transition duration-300">Alat<br />Komunikasi</span>
