@@ -16,9 +16,7 @@ const FooterComp = () => {
             <FaSquareXTwitter size={24} />
           </a>
         </div>
-        <div>
-          Copyright &copy; 2024 RentFest
-        </div>
+          <p className="text-[#a2a2a2]">Copyright &copy; 2024 RentFest. All Right Reserved.</p>
       </footer>
     </div>
   );
