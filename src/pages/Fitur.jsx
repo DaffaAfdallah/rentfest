@@ -25,9 +25,9 @@ const names = [
   'Smart Watch',
   'Bluetooth Speaker',
   'Action Camera',
-  'Virtual Reality Headset',
-  'Portable Projector',
-  'Digital SLR Camera'
+  'VR Headset',
+  'Fitness Tracker',
+  'Smart Home Hub'
 ];
 
 const prices = [
@@ -58,7 +58,6 @@ const shuffleArray = (array) => {
 const Fitur = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFilters, setSelectedFilters] = useState({});
 
   useEffect(() => {
     const shuffledNames = shuffleArray([...names]);
@@ -81,16 +80,9 @@ const Fitur = () => {
     setSearchQuery('');
   };
 
-  const handleFilterChange = (category, option) => {
-    setSelectedFilters((prevFilters) => ({
-      ...prevFilters,
-      [category]: option,
-    }));
-  };
-
-  const filteredProducts = products.filter((product) => {
-    return product.name.toLowerCase().includes(searchQuery.toLowerCase());
-  });
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const fillEmptyItems = () => {
     const emptyItems = [];
@@ -103,71 +95,72 @@ const Fitur = () => {
 
   return (
     <div className="container mx-auto my-12 p-12">
-      <section className="my-8 border-b-8 border-[#1b1a55] text-center pb-6">
+      <section className="my-8 text-left border-b-2 border-[#1b1a55]">
         <h2 className="text-4xl font-bold mb-4 text-[#1b1a55]">Temukan Beragam Alat Yang Kamu Butuhkan</h2>
         <p className="text-lg text-gray-600">Layanan fleksibel dan mudah untuk semua kebutuhan alat Anda.</p>
       </section>
-      <div className="flex mb-6 pb-4 border-b border-[#1b1a55]">
-        <div className="relative flex-1">
-          <div className="flex items-center border border-gray-300 rounded-lg shadow focus-within:ring-1 focus-within:ring-[#1b1a55]">
-            <div className="p-4 bg-[#1b1a55] rounded-l-lg">
-              <FiSearch className="text-white" />
-            </div>
-            <input
-              type="text"
-              placeholder="Cari produk..."
-              value={searchQuery}
-              onChange={handleSearch}
-              className="w-full p-3 pl-3 border-none focus:outline-none focus:ring-0 rounded-r-lg"
-            />
-            {searchQuery && (
-              <button onClick={clearSearch} className="absolute right-0 top-0 bottom-0 flex items-center pr-3">
-                <FiX className="text-gray-500" />
-              </button>
-            )}
-          </div>
-        </div>
-        <div className="flex items-center ml-4 space-x-4">
+      <div className="flex cursor-default">
+        <aside className="w-1/6 mr-6 p-4 border-2 border-[#1b1a55] rounded-2xl">
+          <h2 className="text-3xl font-semibold mb-6 border-b-2 border-[#1b1a55] pb-2 text-[#1b1a55]">Filter</h2>
           {filters.map((filter, index) => (
-            <div key={index} className="relative">
-              <select
-                onChange={(e) => handleFilterChange(filter.category, e.target.value)}
-                className="p-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-1 focus:ring-[#1b1a55]"
-              >
-                <option value="">{filter.category}</option>
-                {filter.options.map((option, idx) => (
-                  <option key={idx} value={option}>{option}</option>
-                ))}
-              </select>
+            <div key={index} className="mb-4">
+              <h3 className="text-lg font-semibold mb-2 text-[#1b1a55]">{filter.category}</h3>
+              {filter.options.map((option, idx) => (
+                <div key={idx} className="flex items-center mb-1">
+                  <input type="checkbox" id={option} name={option} className="mr-2" />
+                  <label htmlFor={option} className="text-[#1b1a55]">{option}</label>
+                </div>
+              ))}
             </div>
           ))}
+        </aside>
+        <div className="flex flex-col flex-1">
+          <div className="relative mb-6">
+            <div className="flex items-center border border-gray-300 rounded-lg shadow-lg focus-within:ring-1 focus-within:ring-[#1b1a55]">
+              <div className="p-4 bg-[#1b1a55] rounded-l-lg">
+                <FiSearch className="text-white" />
+              </div>
+              <input
+                type="text"
+                placeholder="Cari produk..."
+                value={searchQuery}
+                onChange={handleSearch}
+                className="w-full p-3 pl-3 border-none focus:outline-none focus:ring-0 rounded-r-lg"
+              />
+              {searchQuery && (
+                <button onClick={clearSearch} className="absolute right-0 top-0 bottom-0 flex items-center pr-3">
+                  <FiX className="text-gray-500" />
+                </button>
+              )}
+            </div>
+          </div>
+          <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 cursor-default" style={{ minHeight: '54vh' }}>
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <div
+                key={product.id}
+                className="group relative p-4 border-2 rounded-2xl border-[#1b1a55] text-center duration-300"
+                style={{ height: '300px', transition: 'transform 0.5s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4" />
+                <h3 className="text-xl font-medium text-[#1b1a55]">{product.name}</h3>
+                <p className="text-base bg-[#9290c3] text-white">{product.price}</p>
+                <div className="absolute bottom-0 left-0 w-full overflow-hidden rounded-b-xl">
+                  <button className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    Cek & Sewa Sekarang
+                  </button>
+                </div>
+              </div>
+              ))
+            ) : (
+              <p className="text-center col-span-full text-gray-500">Produk tidak ditemukan</p>
+            )}
+            {fillEmptyItems()}
+          </main>
         </div>
       </div>
-      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" style={{ minHeight: '53vh' }}>
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div
-              key={product.id}
-              className="group relative bg-white p-4 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:border hover:border-[#1b1a55] duration-300"
-              style={{ height: '300px', transition: 'transform 0.5s ease' }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4 rounded" />
-              <h3 className="text-lg font-medium text-[#1b1a55]">{product.name}</h3>
-              <p className="text-sm text-gray-600">{product.price}</p>
-              <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-                <button className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white rounded-b-2xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  Sewa Sekarang
-                </button>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="text-center col-span-full text-gray-500">Produk tidak ditemukan</p>
-        )}
-        {fillEmptyItems()}
-      </main>
     </div>
   );
 };
