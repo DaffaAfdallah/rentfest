@@ -19,8 +19,8 @@ import brand3 from '../assets/images/brand3.svg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const Beranda = () => {
+
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -150,15 +150,10 @@ const Beranda = () => {
 
       <section className="fitur container mx-auto my-40 px-8">
         <h3 className="text-5xl text-center font-bold mb-8">Nikmati Fitur Kami</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
-            <h4 className="text-xl font-semibold">CARI SESUAI LOKASI</h4>
-            <p className="text-base mt-2">Temukan toko penyewaan alat terdekat dari lokasi Anda, meningkatkan aksesibilitas dan menghemat waktu pencarian anda. Kami memastikan bahwa alat yang anda cari dapat ditemukan tanpa harus melakukan perjalanan jauh.</p>
-            <button className="px-6 py-2 rounded-lg mt-4 text-lg">Selengkapnya</button>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center px-40">
           <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
             <h4 className="text-xl font-semibold">REKOMENDASI ALAT</h4>
-            <p className="text-base mt-2">Dengan memasukkan detail acara Anda, kami akan merekomendasikan alat-alat yang paling cocok untuk kebutuhan Anda, memudahkan dalam pengambilan keputusan. Hal ini sangat membantu anda dan tidak akan pusing lagi memikirkan alat yang akan disewa.</p>
+            <p className="text-base mt-2">Rekomendasi alat-alat yang paling cocok untuk kebutuhan Anda, memudahkan dalam pengambilan keputusan. Hal ini sangat membantu anda dan tidak akan pusing lagi memikirkan alat yang akan disewa.</p>
             <button className="px-6 py-2 rounded-lg mt-4 text-lg">Selengkapnya</button>
           </div>
           <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
@@ -229,7 +224,9 @@ const Beranda = () => {
         </div>
       </section>
     </div>
+    
   );
 }
+
 
 export default Beranda;

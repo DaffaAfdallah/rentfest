@@ -26,7 +26,7 @@ const NavbarComp = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled ? 'bg-[#eaeaea] shadow-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled ? 'bg-[#eaeaea] shadow-xl' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center" onClick={handleLogoClick}>
           <img src={logo} alt="Logo" className="h-12 cursor-pointer" />
