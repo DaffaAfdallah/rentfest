@@ -2,11 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Masuk = () => {
-
-  const klikDaftar = () => {
-    navigate('/daftar');
-  };
-
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 overflow-hidden">
       <div className="w-full max-w-sm p-6 space-y-6 bg-white rounded-2xl shadow-lg">
@@ -43,9 +38,11 @@ const Masuk = () => {
           </button>
         </form>
         <p className="text-sm text-center text-gray-600">
-          Belum punya akun?
+          Belum punya akun? <Link to="/daftar" className="font-medium text-indigo-600 hover:text-indigo-500">
+          Daftar
+        </Link>
         </p>
-        <button className="font-medium text-indigo-600 hover:text-indigo-500" onClick={klikDaftar}></button>
+
       </div>
     </div>
   );
