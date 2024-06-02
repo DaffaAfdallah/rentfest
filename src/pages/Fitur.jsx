@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import produk3 from '../assets/images/fitur/produk3.png';
 import { FiSearch, FiX } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const productData = [
   { id: 1, image: produk3 },
@@ -58,6 +59,7 @@ const shuffleArray = (array) => {
 const Fitur = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const shuffledNames = shuffleArray([...names]);
@@ -148,7 +150,10 @@ const Fitur = () => {
                 <h3 className="text-xl font-medium text-[#1b1a55]">{product.name}</h3>
                 <p className="text-base bg-[#9290c3] text-white">{product.price}</p>
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden rounded-b-xl">
-                  <button className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <button 
+                    className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                    onClick={() => navigate(`/deskripsi/${product.id}`)}
+                  >
                     Cek & Sewa Sekarang
                   </button>
                 </div>

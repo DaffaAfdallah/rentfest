@@ -34,7 +34,7 @@ const NavbarComp = () => {
         <div className="flex items-center text-lg space-x-8">
           <Link to="/">Beranda</Link>
           <Link to="/tentang">Tentang</Link>
-          <Link to="/fitur">Fitur</Link>
+          <Link to="/fitur">Sewa Alat</Link>
           <button className="px-8 py-2 text-[#f5f5f5] rounded-lg">Masuk</button>
         </div>
       </div>
