@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {!masukPage && !daftarPage && <NavbarComp />}
-      <div className={`flex-grow ${!masukPage && !daftarPage ? '' : 'mt-20'}`}>
+      <div className={`flex-grow ${!masukPage && !daftarPage ? '' : 'mt-0'}`}>
         <Routes>
           <Route path="/" element={<Beranda />} />
           <Route path="/fitur" element={<Fitur />} />
