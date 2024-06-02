@@ -29,10 +29,14 @@ const Deskripsi = () => {
   return (
     <div className="container mx-auto my-12 p-12 flex">
       <div className="w-1/2 pr-6">
-        <Carousel showThumbs={false} showStatus={false}>
+        <Carousel 
+          showThumbs={false} 
+          showStatus={false} 
+          className="bg-[#252525] rounded-lg p-4"
+        >
           {product.images.map((image, index) => (
-            <div key={index}>
-              <img src={image} alt={`${product.name} ${index + 1}`} className="w-full h-80 object-cover" />
+            <div key={index} className="flex justify-center items-center">
+              <img src={image} alt={`${product.name} ${index + 1}`} className="rounded-lg" />
             </div>
           ))}
         </Carousel>
@@ -41,7 +45,7 @@ const Deskripsi = () => {
         <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
         <p className="text-lg mb-4">{product.price}</p>
         <p className="text-base mb-4">{product.description}</p>
-        <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Sewa Sekarang</button>
+        <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">Sewa Sekarang</button>
       </div>
     </div>
   );

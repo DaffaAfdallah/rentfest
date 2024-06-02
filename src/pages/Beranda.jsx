@@ -80,8 +80,8 @@ const Beranda = () => {
             <p className="text-base mt-2">Memberikan saran atau rekomendasi tentang alat-alat yang sesuai dengan kebutuhan dan preferensi pengguna.</p>
           </div>
           <div className="card p-6 rounded-2xl">
-            <h4 className="text-xl font-semibold">Ulasan dan Rating</h4>
-            <p className="text-base mt-2">Melihat ulasan dan rating dari pengguna lain tentang alat-alat tertentu, membantu mereka membuat keputusan yang lebih terinformasi.</p>
+            <h4 className="text-xl font-semibold">Ulasan</h4>
+            <p className="text-base mt-2">Melihat ulasan dari pengguna lain tentang alat-alat tertentu, membantu mereka membuat keputusan yang lebih terinformasi.</p>
           </div>
         </div>
       </section>

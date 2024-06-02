@@ -15,8 +15,8 @@ const App = () => {
       <div className="mt-20">
         <Routes>
           <Route path="/" element={<Beranda />} />
-          <Route path="/tentang" element={<Tentang />} />
           <Route path="/fitur" element={<Fitur />} />
+          <Route path="/tentang" element={<Tentang />} />
           <Route path="/masuk" element={<Masuk />} />
           <Route path="/deskripsi/:id" element={<Deskripsi />} /> {/* Add Deskripsi route */}
         </Routes>
