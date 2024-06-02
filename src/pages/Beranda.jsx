@@ -76,16 +76,8 @@ const Beranda = () => {
             <p className="text-base mt-2">Pencarian yang canggih, pengguna dapat dengan mudah menemukan alat yang mereka butuhkan dengan cepat dan efisien.</p>
           </div>
           <div className="card p-6 rounded-2xl">
-            <h4 className="text-xl font-semibold">Temukan Toko Terdekat</h4>
-            <p className="text-base mt-2">Pencarian lokasi yang memungkinkan pengguna untuk menemukan toko penyewaan alat terdekat dari lokasi mereka.</p>
-          </div>
-          <div className="card p-6 rounded-2xl">
             <h4 className="text-xl font-semibold">Rekomendasi Alat</h4>
             <p className="text-base mt-2">Memberikan saran atau rekomendasi tentang alat-alat yang sesuai dengan kebutuhan dan preferensi pengguna.</p>
-          </div>
-          <div className="card p-6 rounded-2xl">
-            <h4 className="text-xl font-semibold">Sedia Alat Yang Update</h4>
-            <p className="text-base mt-2">Menampilkan informasi ketersediaan alat secara real-time, memastikan bahwa pengguna melihat alat-alat yang dapat disewa.</p>
           </div>
           <div className="card p-6 rounded-2xl">
             <h4 className="text-xl font-semibold">Ulasan dan Rating</h4>
