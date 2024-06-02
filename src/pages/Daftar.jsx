@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Daftar = () => {
   return (
-    <div>Daftar Hmmm</div>
-  )
-}
+    <div>
+      Daftar
+    </div>
+  );
+};
 
-export default Daftar
+export default Daftar;

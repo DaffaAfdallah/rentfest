@@ -16,9 +16,8 @@ const App = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {!masukPage && <NavbarComp />}
-      {!daftarPage && <NavbarComp />}
-      <div className={`flex-grow ${!masukPage, daftarPage ? 'mt-20' : ''}`}>
+      {!masukPage && !daftarPage && <NavbarComp />}
+      <div className={`flex-grow ${!masukPage && !daftarPage ? '' : 'mt-20'}`}>
         <Routes>
           <Route path="/" element={<Beranda />} />
           <Route path="/fitur" element={<Fitur />} />
@@ -28,8 +27,7 @@ const App = () => {
           <Route path="/deskripsi/:id" element={<Deskripsi />} />
         </Routes>
       </div>
-      {!masukPage && <FooterComp />}
-      {!daftarPage && <FooterComp />}
+      {!masukPage && !daftarPage && <FooterComp />}
     </div>
   );
 };
