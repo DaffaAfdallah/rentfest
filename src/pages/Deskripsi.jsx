@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import produk3 from '../assets/images/fitur/produk3.png';
@@ -20,6 +20,7 @@ const productData = [
 
 const Deskripsi = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const product = productData.find((item) => item.id === parseInt(id));
 
   if (!product) {
@@ -27,7 +28,15 @@ const Deskripsi = () => {
   }
 
   return (
-    <div className="container mx-auto my-12 p-12 flex">
+    <div className="container mx-auto mt-12 p-12 flex flex-col">
+        <button 
+            className="w-32 border border-[#1b1a55] text-[#1b1a55] py-2 px-4 rounded hover:bg-[#1b1a55] hover:text-white duration-300"
+            onClick={() => navigate(-1)}
+          >
+            Kembali
+        </button>
+    <div className="container mx-auto mb-12 py-12 flex">
+      
       <div className="w-1/2 pr-6">
         <Carousel 
           showThumbs={false} 
@@ -45,8 +54,14 @@ const Deskripsi = () => {
         <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
         <p className="text-lg mb-4">{product.price}</p>
         <p className="text-base mb-4">{product.description}</p>
-        <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">Sewa Sekarang</button>
+        <div className="flex space-x-4">
+
+          <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">
+            Sewa Sekarang
+          </button>
+        </div>
       </div>
+    </div>
     </div>
   );
 };
