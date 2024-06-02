@@ -4,45 +4,17 @@ import { FiSearch, FiX } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 const productData = [
-  { id: 1, image: produk3 },
-  { id: 2, image: produk3 },
-  { id: 3, image: produk3 },
-  { id: 4, image: produk3 },
-  { id: 5, image: produk3 },
-  { id: 6, image: produk3 },
-  { id: 7, image: produk3 },
-  { id: 8, image: produk3 },
-  { id: 9, image: produk3 },
-  { id: 10, image: produk3 },
-  { id: 11, image: produk3 },
-];
-
-const names = [
-  'Wireless Headphones',
-  'Sony Camera',
-  'Logitech Speaker',
-  'Gaming Mouse',
-  'Drone',
-  'Smart Watch',
-  'Bluetooth Speaker',
-  'Action Camera',
-  'VR Headset',
-  'Fitness Tracker',
-  'Smart Home Hub'
-];
-
-const prices = [
-  'Rp. 100.000,- / hari',
-  'Rp. 190.000,- / hari',
-  'Rp. 150.000,- / hari',
-  'Rp. 80.000,- / hari',
-  'Rp. 120.000,- / hari',
-  'Rp. 200.000,- / hari',
-  'Rp. 250.000,- / hari',
-  'Rp. 250.000,- / hari',
-  'Rp. 250.000,- / hari',
-  'Rp. 250.000,- / hari',
-  'Rp. 300.000,- / hari'
+  { id: 1, image: produk3, name: 'Wireless Headphones', price: 'Rp. 100.000,- / hari' },
+  { id: 2, image: produk3, name: 'Sony Camera', price: 'Rp. 190.000,- / hari' },
+  { id: 3, image: produk3, name: 'Logitech Speaker', price: 'Rp. 150.000,- / hari' },
+  { id: 4, image: produk3, name: 'Gaming Mouse', price: 'Rp. 80.000,- / hari' },
+  { id: 5, image: produk3, name: 'Drone', price: 'Rp. 120.000,- / hari' },
+  { id: 6, image: produk3, name: 'Smart Watch', price: 'Rp. 200.000,- / hari' },
+  { id: 7, image: produk3, name: 'Bluetooth Speaker', price: 'Rp. 250.000,- / hari' },
+  { id: 8, image: produk3, name: 'Action Camera', price: 'Rp. 250.000,- / hari' },
+  { id: 9, image: produk3, name: 'VR Headset', price: 'Rp. 250.000,- / hari' },
+  { id: 10, image: produk3, name: 'Fitness Tracker', price: 'Rp. 250.000,- / hari' },
+  { id: 11, image: produk3, name: 'Smart Home Hub', price: 'Rp. 300.000,- / hari' },
 ];
 
 const filters = [
@@ -52,26 +24,13 @@ const filters = [
   },
 ];
 
-const shuffleArray = (array) => {
-  return array.sort(() => Math.random() - 0.5);
-};
-
 const Fitur = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    const shuffledNames = shuffleArray([...names]);
-    const shuffledPrices = shuffleArray([...prices]);
-
-    const updatedProducts = productData.map((product, index) => ({
-      ...product,
-      name: shuffledNames[index],
-      price: shuffledPrices[index],
-    }));
-
-    setProducts(updatedProducts);
+    setProducts(productData);
   }, []);
 
   const handleSearch = (event) => {
