@@ -6,7 +6,11 @@ const Daftar = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="flex w-full max-w-4xl bg-white rounded-2xl shadow-lg">
-        <div className="hidden w-1/2 bg-cover rounded-l-2xl lg:block" style={{ backgroundImage: `url(${masukdandaftar})` }}></div>
+        <div className="relative hidden w-1/2 bg-cover rounded-l-2xl lg:block" style={{ backgroundImage: `url(${masukdandaftar})` }}>
+          <div className="absolute bottom-0 left-0 px-12 py-4 text-[#9290c3] font-bold bg-black bg-opacity-70 text-3xl rounded-tr-xl rounded-bl-2xl">
+            Daftar
+          </div>
+        </div>
         <div className="w-full lg:w-1/2 p-6 space-y-6">
           <form className="flex flex-col gap-3">
             <input

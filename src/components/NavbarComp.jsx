@@ -4,7 +4,7 @@ import logo from '../assets/images/rf-logo.svg';
 
 const NavbarComp = () => {
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate(); // Add this line
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
