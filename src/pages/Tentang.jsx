@@ -30,15 +30,15 @@ const Tentang = () => {
         </section>
 
         <section 
-          className="flex flex-col md:flex-row justify-between items-center p-12 md:p-36 bg-cover bg-center" 
+          className="flex flex-col md:flex-row justify-between items-center px-20 py-8 mt-20 bg-cover bg-center" 
           style={{
             backgroundImage: `url(${rentfestBackground})`
           }}
         >
           <div className="mb-8 md:mb-0 md:pr-12" data-aos="fade-up">
-            <h2 className="text-4xl font-bold text-white mb-4">Misi Kami</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Visi Kami</h2>
             <p className="text-white text-lg text-justify leading-relaxed">
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Visi Kami menjadi platform rental peralatan terpercaya yang membantu masyarakat menyelesaikan proyek mereka dengan mudah dan efisien.
             </p>
           </div>
           <div className="w-full md:w-1/2" data-aos="fade-up">
