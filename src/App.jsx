@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import NavbarComp from './components/NavbarComp';
 import FooterComp from './components/FooterComp';
 import Beranda from './pages/Beranda';
@@ -19,11 +19,12 @@ const App = () => {
       {!masukPage && !daftarPage && <NavbarComp />}
       <div className={`flex-grow ${!masukPage && !daftarPage ? '' : 'mt-0'}`}>
         <Routes>
-          <Route path="/" element={<Beranda />} />
+          <Route path="/" element={<Navigate to="/masuk" />} />
           <Route path="/fitur" element={<Fitur />} />
           <Route path="/tentang" element={<Tentang />} />
           <Route path="/masuk" element={<Masuk />} />
           <Route path="/daftar" element={<Daftar />} />
+          <Route path="/beranda" element={<Beranda />} />
           <Route path="/deskripsi/:id" element={<Deskripsi />} />
         </Routes>
       </div>
