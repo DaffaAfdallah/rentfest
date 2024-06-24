@@ -39,6 +39,10 @@ const Beranda = () => {
     arrows: true,
   };
 
+  const handleFitur = () => {
+    window.location.href = '/fitur';
+  };
+
   return (
     <div className="beranda">
 
@@ -48,7 +52,7 @@ const Beranda = () => {
           <p className="text-lg text-justify my-8 text-[#303030] pr-40">
             Selamat datang di Layanan Informasi Sewa Alat Terpercaya, Temukan Beragam Alat Berkualitas Tinggi dan Layanan Prima untuk Memenuhi Kebutuhan Proyek atau Acara Anda dengan Fleksibilitas dan Kemudahan yang Tak Tertandingi.
           </p>
-          <button className="btn-cari px-12 py-4 rounded-lg text-lg">
+          <button className="btn-cari px-12 py-4 rounded-lg text-lg" onClick={handleFitur}>
             Cari Alat Sekarang
           </button>
         </div>
