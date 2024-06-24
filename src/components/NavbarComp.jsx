@@ -28,7 +28,7 @@ const NavbarComp = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (dropdownRef.current &&!dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
@@ -50,6 +50,7 @@ const NavbarComp = () => {
           }
         });
         const data = await response.json();
+        console.log('User Data:', data);  
         setUser({ fullName: data.nama, email: data.email });
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -73,7 +74,7 @@ const NavbarComp = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled ? 'bg-[#eaeaea] shadow-xl' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled? 'bg-[#eaeaea] shadow-xl' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center" onClick={handleLogoClick}>
           <img src={logo} alt="Logo" className="h-12 cursor-pointer" />
