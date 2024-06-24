@@ -38,7 +38,7 @@ const Masuk = () => {
 
       const data = await response.json();
       console.log(data);
-      toast.success('Login successful', {
+      toast.success('Berhasil Masuk', {
         onClose: () => navigate('/beranda'),
         autoClose: 3000
       });

@@ -9,10 +9,10 @@ exports.register = (req, res) => {
     const sql = "INSERT INTO users (nama, telepon, email, password) VALUES (?, ?, ?, ?)";
     db.query(sql, [nama, telepon, email, hashedPassword], (err, result) => {
         if (err) {
-            console.error('Error registering user:', err);
-            return res.status(500).json({ message: 'Error registering user' });
+            console.error('Registrasi Belum Berhasil:', err);
+            return res.status(500).json({ message: 'Registrasi Belum Berhasil' });
         }
-        return res.status(201).json({ message: 'User registered successfully' });
+        return res.status(201).json({ message: 'Registrasi Berhasil' });
     });
 };
 
@@ -22,19 +22,19 @@ exports.login = (req, res) => {
     const sql = "SELECT * FROM users WHERE email = ?";
     db.query(sql, [email], (err, results) => {
         if (err) {
-            console.error('Error logging in:', err);
-            return res.status(500).json({ message: 'Error logging in' });
+            console.error('Gagal Masuk :', err);
+            return res.status(500).json({ message: 'Gagal Masuk ' });
         }
         if (results.length === 0) {
-            return res.status(401).json({ message: 'Invalid email or password' });
+            return res.status(401).json({ message: 'email atau password salah' });
         }
 
         const user = results[0];
         if (!bcrypt.compareSync(password, user.password)) {
-            return res.status(401).json({ message: 'Invalid email or password' });
+            return res.status(401).json({ message: 'email atau password salah' });
         }
 
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        return res.status(200).json({ token, message: 'Login successful' });
+        return res.status(200).json({ token, message: 'Berhasil Masuk' });
     });
 };

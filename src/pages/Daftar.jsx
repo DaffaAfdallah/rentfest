@@ -40,7 +40,7 @@ const Daftar = () => {
 
       const data = await response.json();
       console.log(data);
-      toast.success('User registered successfully', {
+      toast.success('Registrasi Berhasil', {
         onClose: () => navigate('/masuk'),
         autoClose: 3000
       });
