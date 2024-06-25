@@ -51,7 +51,7 @@ const Deskripsi = () => {
   }
 
   const handleSewaSekarang = () => {
-    navigate("/sewa-alat");
+    navigate("/sewaalat");
   };
 
   return (

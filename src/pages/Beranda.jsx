@@ -50,6 +50,10 @@ const Beranda = () => {
     navigate('/rekomendasialat');
   };
 
+  const PaketAcara = () => {
+    navigate('/paketacara');
+  };
+
   return (
     <div className="beranda">
 
@@ -162,7 +166,7 @@ const Beranda = () => {
           <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
             <h4 className="text-xl font-semibold">PAKET ACARA</h4>
             <p className="text-base mt-2">Hemat waktu dan usaha dengan memilih paket acara yang sudah termasuk berbagai alat yang dibutuhkan untuk acara Anda, memberikan kenyamanan dan kemudahan ekstra dalam perencanaan acara. Acara anda akan terasa terbantu dengan fitur ini.</p>
-            <button className="px-6 py-2 rounded-lg mt-4 text-lg">Selengkapnya</button>
+            <button className="px-6 py-2 rounded-lg mt-4 text-lg" onClick={PaketAcara}>Selengkapnya</button>
           </div>
         </div>
       </section>

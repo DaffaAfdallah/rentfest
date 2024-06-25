@@ -9,6 +9,8 @@ import Masuk from './pages/Masuk';
 import Daftar from './pages/Daftar';
 import Deskripsi from './pages/Deskripsi';
 import RekomendasiAlat from './pages/RekomendasiAlat';
+import PaketAcara from './pages/PaketAcara';
+import SewaAlat from './pages/SewaAlat';
 
 const App = () => {
   const location = useLocation();
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/beranda" element={<Beranda />} />
           <Route path="/deskripsi/:id" element={<Deskripsi />} />
           <Route path="/rekomendasialat" element={<RekomendasiAlat />} />
+          <Route path="/paketacara" element={<PaketAcara />} />
+          <Route path="/sewaalat" element={<SewaAlat />} />
         </Routes>
       </div>
       {!masukPage && !daftarPage && <FooterComp />}
