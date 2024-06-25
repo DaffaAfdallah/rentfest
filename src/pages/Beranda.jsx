@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Slider from "react-slick";
+import { useNavigate } from 'react-router-dom'; // Add this import
 import img1 from '../assets/images/img1.webp';
 import kamera from '../assets/images/kamera.png';
 import sistemsuara from '../assets/images/sistemsuara.png';
@@ -20,6 +21,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Beranda = () => {
+
+  const navigate = useNavigate(); // Add this line
 
   useEffect(() => {
     AOS.init({
@@ -41,6 +44,10 @@ const Beranda = () => {
 
   const handleFitur = () => {
     window.location.href = '/fitur';
+  };
+
+  const handleRekomendasiAlat = () => {
+    navigate('/rekomendasialat'); // Add this function
   };
 
   return (
@@ -150,7 +157,7 @@ const Beranda = () => {
           <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
             <h4 className="text-xl font-semibold">REKOMENDASI ALAT</h4>
             <p className="text-base mt-2">Rekomendasi alat-alat yang paling cocok untuk kebutuhan Anda, memudahkan dalam pengambilan keputusan. Hal ini sangat membantu anda dan tidak akan pusing lagi memikirkan alat yang akan disewa.</p>
-            <button className="px-6 py-2 rounded-lg mt-4 text-lg">Selengkapnya</button>
+            <button className="px-6 py-2 rounded-lg mt-4 text-lg" onClick={handleRekomendasiAlat}>Selengkapnya</button>
           </div>
           <div className="p-6 group rounded-2xl bg-[#eaeaea] shadow-2xl">
             <h4 className="text-xl font-semibold">PAKET ACARA</h4>

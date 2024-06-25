@@ -8,6 +8,7 @@ import Fitur from './pages/Fitur';
 import Masuk from './pages/Masuk';
 import Daftar from './pages/Daftar';
 import Deskripsi from './pages/Deskripsi';
+import RekomendasiAlat from './pages/RekomendasiAlat';
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/daftar" element={<Daftar />} />
           <Route path="/beranda" element={<Beranda />} />
           <Route path="/deskripsi/:id" element={<Deskripsi />} />
+          <Route path="/rekomendasialat" element={<RekomendasiAlat />} />
         </Routes>
       </div>
       {!masukPage && !daftarPage && <FooterComp />}
