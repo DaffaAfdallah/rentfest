@@ -74,15 +74,15 @@ const NavbarComp = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled? 'bg-[#eaeaea] shadow-xl' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full p-4 transition-all duration-300 z-50 ${scrolled ? 'bg-[#eaeaea] shadow-xl' : 'bg-transparent'}`}>
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center" onClick={handleLogoClick}>
-          <img src={logo} alt="Logo" className="h-12 cursor-pointer" />
+        <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
+          <img src={logo} alt="Logo" className="h-12" />
         </div>
         <div className="flex items-center text-lg space-x-8">
-          <Link to="/beranda">Beranda</Link>
-          <Link to="/fitur">Sewa Alat</Link>
-          <Link to="/tentang">Tentang</Link>
+          <Link to="/beranda" className="text-var(--color-primary) hover:text-[#9290c3] transition duration-300">Beranda</Link>
+          <Link to="/fitur" className="text-var(--color-primary) hover:text-[#9290c3] transition duration-300">Sewa Alat</Link>
+          <Link to="/tentang" className="text-var(--color-primary) hover:text-[#9290c3] transition duration-300">Tentang</Link>
           <div className="relative" ref={dropdownRef}>
             <FontAwesomeIcon icon={faUserCircle} className="text-4xl cursor-pointer" onClick={handleProfileClick} />
             {dropdownOpen && (
@@ -106,4 +106,4 @@ const NavbarComp = () => {
   );
 };
 
-export default NavbarComp;
+export default NavbarComp;
