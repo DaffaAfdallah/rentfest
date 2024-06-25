@@ -41,16 +41,6 @@ nav a {
 nav a:hover {
   color: var(--color-secondary);
 }
-
-nav button {
-  background-color: var(--color-primary);
-  color: var(--color-tertiary);
-  transition: 0.3s;
-}
-
-nav button:hover {
-  background-color: var(--color-secondary);
-}
 /* NAVBAR */
 
 /* BERANDA */
