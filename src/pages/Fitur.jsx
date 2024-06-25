@@ -113,6 +113,7 @@ const Fitur = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(null);
+  const [showFullName, setShowFullName] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -151,7 +152,7 @@ const Fitur = () => {
     for (let i = 0; i < itemsNeeded; i++) {
       emptyItems.push(
         <div
-          key={`empty-${i}`}
+          key={`empty-${i}`} // Use template literals to create a string key
           className="bg-transparent p-4 rounded-2xl"
         ></div>
       );
@@ -241,19 +242,46 @@ const Fitur = () => {
                     alt={product.name}
                     className="w-full h-40 object-cover mb-4"
                   />
-                  <h3 className="text-xl font-medium text-[#1b1a55]">
-                    {product.name}
+                  <h3 className="text-xl font-medium text-[#1b1a55] whitespace-nowrap overflow-hidden text-ellipsis">
+                    {product.name.length > 20 ? (
+                      <>
+                        {product.name.substring(0, 20)}...
+                        <button
+                          onClick={() => setShowFullName(product.id)}
+                          className="text-[#1b1a55] underline ml-1"
+                        >
+                          Selengkapnya
+                        </button>
+                        {showFullName === product.id && (
+                          <div className="absolute top-0 left-0 bg-white p-4 border rounded shadow-lg z-10">
+                            <div className="flex justify-between items-center">
+                              <h3 className="text-xl font-medium text-[#1b1a55]">
+                                {product.name}
+                              </h3>
+                              <button
+                                onClick={() => setShowFullName(null)}
+                                className="text-gray-500 ml-4"
+                              >
+                                <FiX />
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      product.name
+                    )}
                   </h3>
                   <p className="text-base bg-[#9290c3] text-white">
                     {product.price}
                   </p>
                   <div className="absolute bottom-0 left-0 w-full overflow-hidden rounded-b-xl">
-                    <button
-                      className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                      onClick={() => navigate(`/deskripsi/${product.id}`)}
-                    >
-                      Cek & Sewa Sekarang
-                    </button>
+                  <button
+                    className="w-full h-12 px-4 py-2 bg-[#1b1a55] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                    onClick={() => navigate(`/deskripsi/${product.id}`)} // Use backticks and ${product.id}
+                  >
+                    Cek & Sewa Sekarang
+                  </button>
                   </div>
                 </div>
               ))
