@@ -161,9 +161,6 @@ const SewaAlat = () => {
                 <div className="w-24 h-24 bg-gray-300 rounded-lg mr-4"></div>
                 <div>
                   <h4 className="font-bold">Nama Alat</h4>
-                  <p className="text-gray-600">
-                    Deskripsi singkat alat yang disewa.
-                  </p>
                 </div>
               </div>
               <div className="border-t border-gray-300 pt-4">
@@ -174,16 +171,6 @@ const SewaAlat = () => {
                 <div className="flex justify-between mb-2">
                   <span>Durasi</span>
                   <span>{hitungDurasi()} hari</span>
-                </div>
-                <div className="flex justify-between mb-2">
-                  <input
-                    type="text"
-                    placeholder="Masukkan kode promo"
-                    className="p-2 border rounded-lg w-full mr-2"
-                  />
-                  <button className="bg-blue-500 text-white p-2 rounded-lg">
-                    Pakai
-                  </button>
                 </div>
               </div>
               <div className="flex justify-between font-bold text-lg border-t border-gray-300 pt-4">
