@@ -47,7 +47,7 @@ const Beranda = () => {
   };
 
   const handleRekomendasiAlat = () => {
-    navigate('/rekomendasialat'); // Add this function
+    navigate('/rekomendasialat');
   };
 
   return (

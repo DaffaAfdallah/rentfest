@@ -258,7 +258,7 @@ const Fitur = () => {
                 </div>
               ))
             ) : (
-              <p className="text-center col-span-full text-gray-500">
+              <p className="text-center col-span-full text-red-700">
                 Produk tidak ditemukan
               </p>
             )}
