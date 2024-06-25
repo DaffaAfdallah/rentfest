@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -67,21 +67,21 @@ const productData = [
     images: [produk7, produk7, produk7],
     name: "Drum Band Set",
     price: "200000",
-    description: "Deskripsi untuk Bluetooth Speaker",
+    description: "Deskripsi untuk Drum Band Set",
   },
   {
     id: 8,
     images: [produk8, produk8, produk8],
     name: "Lampu Sorot Panggung",
     price: "150000",
-    description: "Deskripsi untuk Action Camera",
+    description: "Deskripsi untuk Lampu Sorot Panggung",
   },
   {
     id: 9,
     images: [produk9, produk9, produk9],
     name: "Lampu Panggung",
     price: "100000",
-    description: "Deskripsi untuk VR Headset",
+    description: "Deskripsi untuk Lampu Panggung",
   },
   {
     id: 10,
@@ -95,28 +95,28 @@ const productData = [
     images: [produk11, produk11, produk11],
     name: "Kursi",
     price: "80000",
-    description: "Deskripsi untuk Smart Home Hub",
+    description: "Deskripsi untuk Kursi",
   },
   {
     id: 12,
     images: [produk12, produk12, produk12],
     name: "Kamera Vidio HD",
     price: "30000",
-    description: "Deskripsi untuk Kursi",
+    description: "Deskripsi untuk Kamera Vidio HD",
   },
   {
     id: 13,
     images: [produk13, produk13, produk13],
     name: "Panggung Semi Ringing",
     price: "1500000",
-    description: "Deskripsi untuk Smart Home Hub",
+    description: "Deskripsi untuk Panggung Semi Ringing",
   },
   {
     id: 14,
     images: [produk14, produk14, produk14],
     name: "Panggung Full Ringing",
     price: "2500000",
-    description: "Deskripsi untuk Smart Home Hub",
+    description: "Deskripsi untuk Panggung Full Ringing",
   },
   {
     id: 15,
@@ -131,6 +131,10 @@ const Deskripsi = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const product = productData.find((item) => item.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!product) {
     return <div>Produk tidak ditemukan</div>;
@@ -158,12 +162,12 @@ const Deskripsi = () => {
           >
             {product.images.map((image, index) => (
               <div key={index} className="flex justify-center items-center">
-                <img
-                  src={image}
-                  alt={`${product.name} ${index + 1}`}
-                  className="rounded-lg"
-                />
-              </div>
+              <img
+                src={image}
+                alt={`${product.name} ${index + 1}`}
+                className="rounded-lg"
+              />
+            </div>
             ))}
           </Carousel>
         </div>
@@ -185,9 +189,9 @@ const Deskripsi = () => {
       </div>
 
       <section className="reviews mx-[5%] px-8">
-        <h2 className="text-2xl font-bold mb-4">All Reviews (461)</h2>
+        <h2 className="text-2xl font-bold mb-4">Semua Ulasan (461)</h2>
         <button className="write-review bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300 mb-4">
-          Tambahkan Review
+          Tambahkan Ulasan
         </button>
         <div
           className="review-list space-y-4"
@@ -201,31 +205,31 @@ const Deskripsi = () => {
             <h3 className="text-xl font-bold">Sindi</h3>
             <p className="text-lg">5 ★★★★★</p>
             <p>Hasil kamera ini luar biasa dengan harga terjangkau...</p>
-            <p>Posted on August 16, 2023</p>
+            <p>Diposting pada 16 Agustus 2023</p>
           </div>
           <div className="review p-4 border rounded shadow-md border-yellow-500">
             <h3 className="text-xl font-bold">Adrian Wahyu</h3>
             <p className="text-lg">5 ★★★★★</p>
             <p>Pengalaman saya menggunakan kamera ini sangat memuaskan...</p>
-            <p>Posted on August 15, 2023</p>
+            <p>Diposting pada 15 Agustus 2023</p>
           </div>
           <div className="review p-4 border rounded shadow-md border-yellow-500">
             <h3 className="text-xl font-bold">Ikhsan</h3>
             <p className="text-lg">5 ★★★★★</p>
             <p>Kamera ini menawarkan performa yang sangat baik...</p>
-            <p>Posted on August 15, 2023</p>
+            <p>Diposting pada 15 Agustus 2023</p>
           </div>
           <div className="review p-4 border rounded shadow-md border-yellow-500">
             <h3 className="text-xl font-bold">Darto</h3>
             <p className="text-lg">5 ★★★★★</p>
             <p>Setelah menggunakan kamera ini, saya sangat terkesan...</p>
-            <p>Posted on August 15, 2023</p>
+            <p>Diposting pada 15 Agustus 2023</p>
           </div>
         </div>
       </section>
 
       <section className="related-products mt-12 mx-[5%] px-8">
-        <h2 className="text-2xl font-bold mb-4">Related Products</h2>
+        <h2 className="text-2xl font-bold mb-4">Produk Terkait</h2>
         <div className="related-product-list grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="related-product p-4 border rounded shadow-md">
             <img
