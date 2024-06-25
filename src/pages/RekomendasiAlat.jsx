@@ -104,9 +104,9 @@ const toolOptions = [
   "Smart Home Hub",
 ];
 
-const RekomendasiAlat = () => {
-  const [minAnggaran, setMinAnggaran] = useState("");
-  const [maxAnggaran, setMaxAnggaran] = useState("");
+const Rekomendasi = () => {
+  const [minDana, setMinDana] = useState("");
+  const [maxDana, setMaxDana] = useState("");
   const [alat, setAlat] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const navigate = useNavigate();
@@ -115,8 +115,8 @@ const RekomendasiAlat = () => {
     event.preventDefault();
     const filtered = productData.filter((item) => {
       const price = parseInt(item.price);
-      const minPrice = parseInt(minAnggaran.replace(/\D/g, "")) || 0;
-      const maxPrice = parseInt(maxAnggaran.replace(/\D/g, "")) || Infinity;
+      const minPrice = parseInt(minDana.replace(/\D/g, "")) || 0;
+      const maxPrice = parseInt(maxDana.replace(/\D/g, "")) || Infinity;
       return (
         price >= minPrice &&
         price <= maxPrice &&
@@ -130,120 +130,112 @@ const RekomendasiAlat = () => {
     navigate(`/deskripsi/${id}`);
   };
 
+  const handleKembali = () => {
+    navigate('/beranda');
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
-      <div className="w-full max-w-2xl p-6 bg-white rounded-lg shadow-lg">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
+      <div className="w-full lg:w-1/3 p-6 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-[#1b1a55]">
           Rekomendasi Alat
         </h2>
-        <p className="text-center text-gray-600 mt-2">
-          Daripada bingung cari alatnya, mending sini kita bantu untuk mencari
+        <p className="text-center text-gray-600">
+          Daripada bingung cari alatnya, mending sini kita bantu untuk mencari alat yang cocok dengan acaramu.
         </p>
-        <p className="text-center text-gray-600 mb-6">
-          alat yang cocok dengan acaramu.
-        </p>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="minAnggaran" className="block text-gray-600">
-              Anggaran Minimum
-            </label>
-            <input
-              id="minAnggaran"
-              name="minAnggaran"
-              type="text"
-              placeholder="masukkan anggaran minimum"
-              value={minAnggaran}
-              onChange={(e) => setMinAnggaran(e.target.value)}
-              required
-              className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
-            />
-          </div>
-          <div>
-            <label htmlFor="maxAnggaran" className="block text-gray-600">
-              Anggaran Maksimum
-            </label>
-            <input
-              id="maxAnggaran"
-              name="maxAnggaran"
-              type="text"
-              placeholder="masukkan anggaran maksimum"
-              value={maxAnggaran}
-              onChange={(e) => setMaxAnggaran(e.target.value)}
-              required
-              className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
-            />
-          </div>
-          <div>
-            <label htmlFor="alat" className="block text-gray-600">
-              Alat Yang Dibutuhkan
-            </label>
-            <select
-              id="alat"
-              name="alat"
-              value={alat}
-              onChange={(e) => setAlat(e.target.value)}
-              required
-              className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
-            >
-              <option value="" disabled>
-                Pilih alat
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <label htmlFor="minDana" className="block text-gray-600">
+            Dana Minimum
+          </label>
+          <input
+            id="minDana"
+            name="minDana"
+            type="text"
+            placeholder="Misalnya : 100000"
+            value={minDana}
+            onChange={(e) => setMinDana(e.target.value)}
+            required
+            className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
+          />
+          <label htmlFor="maxDana" className="block text-gray-600">
+            Dana Maksimum
+          </label>
+          <input
+            id="maxDana"
+            name="maxDana"
+            type="text"
+            placeholder="Misalnya : 300000"
+            value={maxDana}
+            onChange={(e) => setMaxDana(e.target.value)}
+            required
+            className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
+          />
+          <label htmlFor="alat" className="block text-gray-600">
+            Alat Yang Dibutuhkan
+          </label>
+          <select
+            id="alat"
+            name="alat"
+            value={alat}
+            onChange={(e) => setAlat(e.target.value)}
+            required
+            className="w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-[#1b1a55] focus:border-[#1b1a55]"
+          >
+            <option value="" disabled>
+              Pilih alat
+            </option>
+            {toolOptions.map((tool, index) => (
+              <option key={index} value={tool}>
+                {tool}
               </option>
-              {toolOptions.map((tool, index) => (
-                <option key={index} value={tool}>
-                  {tool}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex justify-between items-center">
-            <button
-              type="submit"
-              className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300"
-            >
+            ))}
+          </select>
+          <div className="flex justify-between">
+            <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">
               Cari Rekomendasi
             </button>
             <button
               type="button"
-              className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 duration-300"
-              onClick={() => navigate('/beranda')}
+              className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 duration-300"
+              onClick={handleKembali}
             >
               Kembali
             </button>
           </div>
         </form>
 
-        {filteredProducts.length > 0 && (
-          <div className="mt-8 overflow-y-auto max-h-80">
-            <h3 className="text-xl font-bold text-center text-[#1b1a55] mb-4">
+        {filteredProducts.length > 0 ? (
+          <div className="mt-8 overflow-y-auto" style={{ maxHeight: "50vh" }}>
+            <h3 className="text-xl font-bold text-center text-[#1b1a55]">
               Hasil Pencarian
             </h3>
             <div className="space-y-4">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="flex flex-col md:flex-row items-center bg-white p-4 rounded shadow-md"
+                  className="flex flex-col md:flex-row items-center bg-gray-50 p-4 rounded-lg shadow-md"
                 >
-                  <div className="w-full md:w-1/2 pr-0 md:pr-6">
+                  <div className="w-full md:w-1/2 pr-6">
                     <Carousel
                       showThumbs={false}
                       showStatus={false}
-                      className="rounded-lg"
+                      className="bg-[#252525] rounded-lg p-4"
                     >
                       {product.images.map((image, index) => (
                         <div
-                          key={index}
-                          className="flex justify-center items-center bg-gray-200 rounded-lg"
-                        >
-                          <img
-                            src={image}
-                            alt={`${product.name} ${index + 1}`}
-                            className="rounded-lg"
-                          />
-                        </div>
+                        key={index}
+                        className="flex justify-center items-center"
+                      >
+                        <img
+                          src={image}
+                          alt={`${product.name} ${index + 1}`}
+                          className="rounded-lg"
+                        />
+                      </div>
                       ))}
                     </Carousel>
                   </div>
-                  <div className="w-full md:w-1/2 pl-0 md:pl-6 mt-4 md:mt-0">
+                  <div className="w-full md:w-1/2 pl-6 mt-4 md:mt-0">
                     <h4 className="text-2xl font-bold mb-2">{product.name}</h4>
                     <p className="text-lg mb-2">
                       Rp. {product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
@@ -260,10 +252,14 @@ const RekomendasiAlat = () => {
               ))}
             </div>
           </div>
+        ) : (
+          <div className="mt-8 text-center text-red-700">
+            Alat tidak ditemukan
+          </div>
         )}
       </div>
     </div>
   );
 };
 
-export default RekomendasiAlat;
+export default Rekomendasi;
