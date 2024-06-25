@@ -16,77 +16,66 @@ const productData = [
     images: [produk1, produk1, produk1],
     name: "Wireless Headphones",
     price: "100000",
-    description: "Deskripsi untuk Wireless Headphones",
   },
   {
     id: 2,
     images: [produk2, produk2, produk2],
     name: "Sony Camera",
     price: "190000",
-    description: "Deskripsi untuk Sony Camera",
   },
   {
     id: 3,
     images: [produk3, produk3, produk3],
     name: "Noise Cancelling Headphones",
     price: "150000",
-    description: "Deskripsi untuk Noise Cancelling Headphones",
   },
   {
     id: 4,
     images: [produk4, produk4, produk4],
     name: "SoundCard",
     price: "200000",
-    description: "Deskripsi untuk SoundCard",
   },
   {
     id: 5,
     images: [produk5, produk5, produk5],
     name: "Logitech Gaming Speaker",
     price: "120000",
-    description: "Deskripsi untuk Logitech Gaming Speaker",
   },
   {
     id: 6,
     images: [produk6, produk6, produk6],
     name: "Speaker Bluetooth",
     price: "50000",
-    description: "Deskripsi untuk Speaker Bluetooth",
   },
   {
     id: 7,
     images: [produk7, produk7, produk7],
     name: "Bluetooth Speaker",
     price: "250000",
-    description: "Deskripsi untuk Bluetooth Speaker",
   },
   {
     id: 8,
     images: [produk3, produk3, produk3],
     name: "Action Camera",
     price: "250000",
-    description: "Deskripsi untuk Action Camera",
   },
   {
     id: 9,
     images: [produk3, produk3, produk3],
     name: "VR Headset",
     price: "250000",
-    description: "Deskripsi untuk VR Headset",
   },
   {
     id: 10,
     images: [produk3, produk3, produk3],
     name: "Fitness Tracker",
     price: "250000",
-    description: "Deskripsi untuk Fitness Tracker",
   },
   {
     id: 11,
     images: [produk3, produk3, produk3],
     name: "Smart Home Hub",
     price: "300000",
-    description: "Deskripsi untuk Smart Home Hub",
   },
 ];
 
@@ -131,7 +120,7 @@ const Rekomendasi = () => {
   };
 
   const handleKembali = () => {
-    navigate('/beranda');
+    navigate(-1);
   };
 
   return (
@@ -191,15 +180,15 @@ const Rekomendasi = () => {
             ))}
           </select>
           <div className="flex justify-between">
-            <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">
-              Cari Rekomendasi
-            </button>
             <button
               type="button"
               className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 duration-300"
               onClick={handleKembali}
             >
               Kembali
+            </button>
+            <button className="bg-[#1b1a55] text-white py-2 px-4 rounded hover:bg-[#9290c3] duration-300">
+              Cari Rekomendasi
             </button>
           </div>
         </form>
